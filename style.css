@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --very-dark-blue: hsl(233, 47%, 7%);
+  --desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+
+  --white: hsl(0, 0%, 100%);
+  --transparent-white-pry: hsla(0, 0%, 100%, 0.75);
+  --transparent-white-sec: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: grid;
+  grid-template-columns: 500px 525px;
+  gap: 30px;
+  background-color: var(--desaturated-blue);
+  color: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.text-box {
+  padding: 70px;
+}
+
+.header-text {
+  margin-bottom: 30px;
+  line-height: 1.3;
+}
+
+.header-text span {
+  color: var(--soft-violet);
+}
+
+.header-description {
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--transparent-white-sec);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.num-rating {
+  display: flex;
+  margin-top: 60px;
+  gap: 70px;
+}
+
+.num {
+  font-size: 22px;
+}
+
+.num-label {
+  text-transform: uppercase;
+  font-size: 10px;
+  font-family: "Lexend Deca", sans-serif;
+  margin-top: 5px;
+  letter-spacing: 1.8px;
+  color: var(--transparent-white-sec);
+}
+
+.img-box {
+  background-image: linear-gradient(
+      hsla(276, 73%, 23%, 0.65),
+      hsla(276, 73%, 23%, 0.65)
+    ),
+    url(images/image-header-desktop.jpg);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 100%;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 999px) {
+  .container {
+    grid-template-columns: 350px;
+    text-align: center;
+  }
+
+  .img-box {
+    background-image: linear-gradient(
+        hsla(276, 73%, 23%, 0.65),
+        hsla(276, 73%, 23%, 0.65)
+      ),
+      url(images/image-header-mobile.jpg);
+    background-size: cover;
+
+    height: 200px;
+    grid-row: 1;
+  }
+
+  .text-box {
+    padding: 5px 10px;
+  }
+
+  .header-text {
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  .num-rating {
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px;
+  }
+
+  .header-description {
+    padding: 0 30px;
+    line-height: 1.5;
+  }
+
+  .num-label {
+    margin-top: 2px;
+  }
+}
